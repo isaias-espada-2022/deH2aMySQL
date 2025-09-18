@@ -38,7 +38,7 @@ public class VerduleriaController {
 	private ResponseEntity<Void> create(@RequestBody Verdura nuevaVerdura, UriComponentsBuilder ucb) {
 		System.out.println(nuevaVerdura);
 		Verdura verdura = verduleriaRepository.save(nuevaVerdura);
-		URI uriVerdura = ucb.path("verduras/{id}").buildAndExpand(verdura.id()).toUri();
+		URI uriVerdura = ucb.path("verduras/{id}").buildAndExpand(verdura.getId()).toUri();
 		return ResponseEntity.created(uriVerdura).build();
 	}
 	
